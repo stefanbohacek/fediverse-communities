@@ -1,0 +1,31 @@
+{
+  "name": "fediverse-community-finder",
+  "version": "1.0.0",
+  "description": "Find a fediverse community that's right for you.",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy",
+    "refresh": "rm -f _cache/communities.json"
+  },
+  "dependencies": {
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.2.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "url": "http://github.com/stefanbohacek/fediverse-community-finder"
+  },
+  "license": "GPL-3.0",
+  "keywords": [
+    "fediverse",
+    "mastodon",
+    "social-media"
+  ]
+}

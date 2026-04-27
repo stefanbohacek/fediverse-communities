@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      const toggleDarkMode = (enabled) => {
+        document.documentElement.setAttribute(
+          "data-bs-theme", enabled
+          ? "dark"
+          : "light");
+      };
+      if (window.matchMedia) {
+        toggleDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
+        toggleDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      });
+    </script>
+    {% include "partial-meta.njk" %} <link href="/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet"/>
+  </head>
+  <body class="min-vh-100 d-flex flex-column">
+    <div class="container mt-4">
+      <div class="alert alert-warning" role="alert">
+        This is a prototype created to get community feedback and is not currently actively maintained. In the meantime, please
+        visit
+        <a href="https://stefanbohacek.com/blog/how-to-join-mastodon-and-the-fediverse/" class="alert-link">my blog</a>.
+      </div>
+    </div>
+    <main id="main" class="container fs-5 flex-grow-1">
+      {{ content | safe }}
+    </main>
+    <a
+      id="back-to-top"
+      class="fixed-bottom btn btn-secondary rounded-bottom-0 d-none pl-0"
+      role="button"
+      href="#"
+      title="Back to Top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+        <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6
+          342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path>
+      </svg>
+      <small class="fw-bold">Back to top</small>
+    </a>
+    <footer class="mt-auto py-3">
+      <div class="container text-center">
+        <p class="mb-0">Made by
+          <a href="https://stefanbohacek.online/@stefan" rel="me">@stefan</a>.</p>
+      </div>
+    </footer>
+    <script type="module" src="/js/main.js"></script>
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setExcludedQueryParams", ["token"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function () {
+        var u = "//matomo.stefanbohacek.com/";
+        _paq.push([
+          'setTrackerUrl',
+          u + 'matomo.php'
+        ]);
+        _paq.push(['setSiteId', '36']);
+        var d = document,
+          g = d.createElement('script'),
+          s = d.getElementsByTagName('script')[0];
+        g.async = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+  </body>
+</html>
