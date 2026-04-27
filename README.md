@@ -8,8 +8,9 @@ A directory of well-maintained fediverse communities.
 [Reach out](https://stefanbohacek.com/contact/) to get your community added, or, if you prefer:
 
 1. Fork this project on GitHub.
-2. Update `_data/communities-data.json` with information about your community.
-3. Open a pull request.
+2. Create a new file in the style of `COMMUNITY.SOCIAL.json` inside `_data/communities`. 
+3. Using other community data files as an example, fill it with information about your community.
+4. Open a pull request.
 
 ## Local development
 
