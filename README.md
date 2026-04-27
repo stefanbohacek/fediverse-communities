@@ -1,3 +1,6 @@
+> [!WARNING]
+> This is a prototype created to get community feedback and is not currently actively maintained. In the meantime, please visit my blog.
+
 # Find your fediverse community
 
 A directory of well-maintained fediverse communities.
